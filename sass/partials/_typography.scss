@@ -1,0 +1,45 @@
+h1 {
+	font-family: $font-headings;
+	font-size: 6.5625em;
+
+	@media screen and (max-width: $tablet-width) {
+		font-size: 4.375em;
+	}
+
+	@media screen and (max-width: $mobile-width) {
+		font-size: 2.4375em;
+	}
+}
+
+h2 {
+	font-family: $font-sub-headings;
+	font-size: 3.125em;
+	color: $primary-color;
+	font-weight: 400;
+
+	@media screen and (max-width: $mobile-width) {
+		font-size: 1.5625em;
+	}
+}
+
+h3 {
+	font-family: $font-sub-headings;
+	font-size: 2.5em;
+	font-weight: 400;
+}
+
+h4 {
+	font-family: $font-sub-headings;
+	font-size: 1.5625em;
+	color: $primary-color;
+	font-weight: 400;
+}
+
+p {
+	font-family: $font-paragraphs;
+	font-size: 1.5em;
+
+	@media screen and (max-width: $tablet-width) {
+		font-size: 1em;
+	}
+}
