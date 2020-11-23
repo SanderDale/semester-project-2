@@ -1,6 +1,9 @@
 h1 {
 	font-family: $font-headings;
+	font-weight: 400;
 	font-size: 6.5625em;
+	color: white;
+	letter-spacing: 5px;
 
 	@media screen and (max-width: $tablet-width) {
 		font-size: 4.375em;

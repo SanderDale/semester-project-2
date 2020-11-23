@@ -7,4 +7,64 @@
 body {
 	width: 100%;
 	overflow-x: hidden;
+	background-color: $background-color;
+}
+
+.banner {
+	width: 100%;
+	height: 275px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 6px 10px rgba($color: #000000, $alpha: 0.2);
+	margin-top: 10px;
+	position: relative;
+	background-color: black;
+
+	@media screen and (max-width: $mobile-width) {
+		height: 150px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		background-image: url(../../images/banner.jpg);
+		opacity: 0.6;
+	}
+
+	h1 {
+		position: relative;
+	}
+}
+
+.loading {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	margin-top: 50px;
+}
+
+.loading:after {
+	content: " ";
+	display: block;
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+	border-radius: 50%;
+	border: 6px solid $primary-color;
+	border-color: $primary-color transparent $primary-color transparent;
+	animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
