@@ -21,6 +21,10 @@ body {
 	position: relative;
 	background-color: black;
 
+	@media screen and (max-width: $tablet-width) {
+		height: 200px;
+	}
+
 	@media screen and (max-width: $mobile-width) {
 		height: 150px;
 	}

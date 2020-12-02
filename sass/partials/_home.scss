@@ -16,6 +16,7 @@
 	width: 100%;
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 
 	@media screen and (max-width: $tablet-width) {
 		flex-direction: column;

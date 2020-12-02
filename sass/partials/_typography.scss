@@ -29,6 +29,15 @@ h3 {
 	font-family: $font-sub-headings;
 	font-size: 2.5em;
 	font-weight: 400;
+	text-transform: uppercase;
+
+	@media screen and (max-width: $tablet-width) {
+		font-size: 1.8em;
+	}
+
+	@media screen and (max-width: $mobile-width) {
+		font-size: 1.5625em;
+	}
 }
 
 h4 {

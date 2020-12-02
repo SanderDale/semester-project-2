@@ -1,31 +1,18 @@
 import { url } from "./constants/data.js";
 import { displayFeatured } from "./components/displayFeatured.js";
+import { navSlide } from './components/nav.js';
 
-/*const homeBannerUrl = "http://localhost:1337/home";
+navSlide();
 
 const homeBanner = document.querySelector(".hero--background");
 
-async function getBanner() {
-    try {
-        const response = await fetch(homeBannerUrl);
-        const results = await response.json();
-        const banner = results;
-        console.log(banner);
-        homeBanner.style.backgroundImage = "url(${banner.hero_banner.url})";
-        console.log(homeBanner);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-getBanner();*/
+homeBanner.style.backgroundImage = "url(http://localhost:1337/uploads/photo_1544085311_11a028465b03_29d7651dcc.jpeg)";
 
 async function getProducts() {
     try {
         const response = await fetch(url);
         const results = await response.json();
         const products = results;
-        console.log(products);
         displayFeatured(products);
     } catch (error) {
         console.log(error);
