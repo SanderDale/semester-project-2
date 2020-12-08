@@ -1,0 +1,110 @@
+.admin--container {
+	width: 80%;
+	margin: 0 auto;
+	background-color: $background-color;
+}
+
+.admin-info--container {
+	display: flex;
+	padding: 70px 0;
+
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50%;
+		padding-right: 20px;
+	}
+
+	p {
+		max-width: 400px;
+	}
+
+	.add-product--button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 250px;
+		height: 80px;
+		border-radius: 40px;
+		background-color: #22aa3d;
+		color: white;
+		font-size: 25px;
+		font-family: $font-sub-headings;
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+
+		i {
+			padding-right: 10px;
+		}
+	}
+
+	.add-product--button:hover {
+		transform: translateY(-2px);
+		box-shadow: 6px 6px 6px rgba($color: #000000, $alpha: 0.2);
+	}
+}
+
+.admin-products--container {
+	padding-bottom: 100px;
+}
+
+.admin-product--container {
+	display: grid;
+	grid-template-columns: 20% 20% 25% 35%;
+	grid-template-rows: 1fr;
+	gap: 1px 4px;
+	grid-template-areas: "product-image product-title edit-product-link delete-product";
+	align-items: center;
+	justify-items: center;
+	background-color: white;
+	padding: 10px;
+	margin: 15px 0;
+
+	@media screen and (max-width: $mobile-width) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		gap: 15px 1px;
+		grid-template-areas:
+			"product-image product-title"
+			"product-image details-link"
+			"product-image remove-from-cart";
+	}
+
+	.admin-details--link {
+		text-decoration: none;
+	}
+}
+
+.edit-product-link {
+	grid-area: edit-product-link;
+
+	a {
+		text-decoration: none;
+		color: black;
+		font-family: $font-sub-headings;
+		border-bottom: 1px solid black;
+	}
+}
+
+.delete-product {
+	grid-area: delete-product;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.delete-product--button {
+		width: 30%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+
+	p {
+		font-size: 1em;
+		margin-right: 5px;
+		font-family: $font-sub-headings;
+	}
+}

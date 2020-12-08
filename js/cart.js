@@ -1,6 +1,8 @@
 import { getCartItems } from './components/getCartItems.js';
 import { totalPrice } from './components/totalPrice.js'
-import { navSlide } from './components/nav.js';
+import { navSlide, createNav } from "./components/nav.js";
+
+createNav();
 
 navSlide();
 
@@ -41,7 +43,6 @@ function createCart(cartItems) {
                                             </div>`
         });
     }
-
 }
 
 createCart(cartItems);

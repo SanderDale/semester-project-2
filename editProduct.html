@@ -15,40 +15,55 @@
         <div class="nav--container"></div>
     </div>
     <div class="banner">
-        <h1>Login</h1>
+        <h1>Edit Product</h1>
     </div>
-    <main class="login--background">
-      <div class="login--container">
-        <div class="login--text">
-            <p>Log in here to add, edit or delete products from this website. This login is only meant for people who have admin permission.</p>
-        </div>
-        <div class="login-form--container">
-            <h2>Admin Login</h2>
-            <form id="login--form">
+    <div class="add--container">
+        <main class="addProductFrom--container">
+            <form id="addProduct--form">
                 <div class="message-container"></div>
                 <div>
                     <label>
-                        Username/Email:
-                        <input name="username" id="username" placeholder="Username">
+                        Title
+                        <input name="title" id="title" placeholder="Title">
                     </label>
                 </div>
                 <div>
                     <label>
-                        Password:
-                        <input name="password" id="password" placeholder="Password">
+                        Price
+                        <input name="price" id="price" placeholder="Price">
                     </label>
                 </div>
-                <button>Login</button>
+                <div>
+                    <label>
+                        Image Url
+                        <input name="image-url" id="image-url" placeholder="Image Url">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Description
+                        <input name="description" id="description" placeholder="Description">
+                    </label>
+                </div>
+                <div>
+                    <label class="switch">
+                      <input type="checkbox" checked>
+                      <span class="slider"></span>
+                    </label>
+                </div>
+
+                <input id="id" type="hidden" />
+
+                <button>Edit Product</button>
             </form>
-        </div>
-      </div>  
-    </main>
+        </main>
+    </div>
     <footer>
         <div>
             <a class="logo-link" href="index.html"><img class="logo-img" src="images/logo.png" alt="logo"></a>
         </div>
         <div class="navigation--footer"></div>
     </footer>
-    <script src="js/login.js" type="module"></script>
+    <script src="js/editProduct.js" type="module"></script>
 </body>
 </html>

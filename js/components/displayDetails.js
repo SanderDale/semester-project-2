@@ -25,7 +25,7 @@ export function displayDetails(detailsToDisplay) {
     }
 
     detailsContainer.innerHTML += `<div class="details--image">
-                                        <img src="${detailsToDisplay.image_url}" alt="${detailsToDisplay.image.alternativeText}">
+                                        <img src="${detailsToDisplay.image_url}">
                                     </div>
                                     <div class="details--info">
                                         <h2>${detailsToDisplay.title}</h2>

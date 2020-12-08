@@ -12,44 +12,29 @@
 <body>
     <div class="hero--container">
         <div class="hero--accent"></div>
-        <div class="nav--container">
-            <nav class="navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li class="logo-link"><a class="logo-link" href="index.html"><img class="logo-img" src="images/logo.png" alt="logo"></a></li>
-                    <li><a class="active" href="login.html"><i class="fas fa-user"></i>Login</a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-                </ul>
-                <div class="mobile-nav">
-                    <div class="logo-responsive"><a href="index.html"><img class="logo-img" src="images/logo.png" alt="logo"></a></div>
-                    <div class="burger">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <div class="nav--container"></div>
     </div>
     <div class="banner">
         <h1>Admin</h1>
     </div>
+    <main class="admin--container">
+        <div class="admin-info--container">
+            <div>
+                <p>Welcome to the admin page. From this page you can add, edit or delete products from the website.</p>
+            </div>
+            <div>
+                <a class="add-product--button" href="addProduct.html"><i class="fas fa-plus"></i> Add Products</a>
+            </div>
+        </div>
+        <div class="admin-products--container">
+        </div>
+    </main>
     <footer>
         <div>
             <a class="logo-link" href="index.html"><img class="logo-img" src="images/logo.png" alt="logo"></a>
         </div>
-        <div class="navigation--footer">
-            <nav class="navigation">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a class="active" href="login.html"><i class="fas fa-user"></i>Login</a></li>
-                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="navigation--footer"></div>
     </footer>
-    <script src="js/login.js" type="module"></script>
+    <script src="js/admin.js" type="module"></script>
 </body>
 </html>

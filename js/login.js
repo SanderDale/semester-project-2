@@ -1,6 +1,8 @@
 import displayMessage from "./components/displayMessage.js";
 import { saveToken, saveUser } from "./components/userStorage.js";
-import { navSlide } from './components/nav.js';
+import { navSlide, createNav } from "./components/nav.js";
+
+createNav();
 
 navSlide();
 
@@ -24,6 +26,8 @@ function submitForm(event) {
     if (usernameValue.length === 0 || passwordValue.length === 0) {
         return displayMessage("warning", "Please enter a valid username and password", ".message-container");
     }
+
+    form.innerHTML = `<div class="loading"></div>`;
 
     doLogin(usernameValue, passwordValue);
 }

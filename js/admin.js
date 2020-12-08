@@ -1,10 +1,8 @@
-import { url } from "./constants/data.js";
-import { displayProducts } from "./components/displayProducts.js";
-import { searchProducts } from "./components/searchWatches.js";
 import { navSlide, createNav } from "./components/nav.js";
+import { displayAdminProducts } from "./components/displayAdminProducts.js";
+import { url } from "./constants/data.js";
 
 createNav();
-
 navSlide();
 
 async function getProducts() {
@@ -12,8 +10,7 @@ async function getProducts() {
         const response = await fetch(url);
         const results = await response.json();
         const products = results;
-        displayProducts(products);
-        searchProducts(products);
+        displayAdminProducts(products);
         console.log(products);
     } catch (error) {
         console.log(error);

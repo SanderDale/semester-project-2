@@ -1,6 +1,8 @@
 import { url } from "./constants/data.js";
 import { displayDetails } from "./components/displayDetails.js";
-import { navSlide } from './components/nav.js';
+import { navSlide, createNav } from "./components/nav.js";
+
+createNav();
 
 navSlide();
 
