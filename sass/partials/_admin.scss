@@ -7,17 +7,43 @@
 .admin-info--container {
 	display: flex;
 	padding: 70px 0;
+	justify-content: space-evenly;
+
+	@media screen and (max-width: $tablet-width) {
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 30px 0 50px 0;
+	}
+
+	@media screen and (max-width: $mobile-width) {
+		padding: 20px 0 40px 0;
+	}
 
 	div {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 50%;
-		padding-right: 20px;
+		width: 100%;
+
+		@media screen and (max-width: $tablet-width) {
+			margin-top: 40px;
+		}
+
+		@media screen and (max-width: $mobile-width) {
+			flex-direction: column;
+		}
 	}
 
 	p {
 		max-width: 400px;
+		min-width: 300px;
+		margin-right: 5px;
+
+		@media screen and (max-width: $mobile-width) {
+			padding: 0 30px;
+			text-align: center;
+		}
 	}
 
 	.add-product--button {
@@ -33,6 +59,19 @@
 		font-family: $font-sub-headings;
 		text-decoration: none;
 		transition: all 0.3s ease-in-out;
+		margin-right: 40px;
+
+		@media screen and (max-width: $tablet-width) {
+			min-width: 200px;
+			height: 50px;
+			font-size: 20px;
+			margin-right: 20px;
+		}
+
+		@media screen and (max-width: $mobile-width) {
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
 
 		i {
 			padding-right: 10px;
@@ -43,6 +82,38 @@
 		transform: translateY(-2px);
 		box-shadow: 6px 6px 6px rgba($color: #000000, $alpha: 0.2);
 	}
+
+	#logout {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 250px;
+		height: 80px;
+		border-radius: 40px;
+		background-color: rgb(240, 40, 40);
+		border: 2px solid red;
+		color: white;
+		font-size: 25px;
+		font-family: $font-sub-headings;
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+
+		@media screen and (max-width: $tablet-width) {
+			min-width: 200px;
+			height: 50px;
+			font-size: 20px;
+		}
+	}
+
+	#logout:hover {
+		background-color: transparent;
+		color: black;
+	}
+
+	#logout:focus {
+		outline: none;
+	}
 }
 
 .admin-products--container {
@@ -51,10 +122,10 @@
 
 .admin-product--container {
 	display: grid;
-	grid-template-columns: 20% 20% 25% 35%;
+	grid-template-columns: 25% 25% 45%;
 	grid-template-rows: 1fr;
 	gap: 1px 4px;
-	grid-template-areas: "product-image product-title edit-product-link delete-product";
+	grid-template-areas: "product-image product-title edit-product-link";
 	align-items: center;
 	justify-items: center;
 	background-color: white;
@@ -62,13 +133,19 @@
 	margin: 15px 0;
 
 	@media screen and (max-width: $mobile-width) {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
-		gap: 15px 1px;
-		grid-template-areas:
-			"product-image product-title"
-			"product-image details-link"
-			"product-image remove-from-cart";
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 20px;
+
+		img {
+			width: 100%;
+		}
+
+		h4 {
+			padding: 30px 0;
+		}
 	}
 
 	.admin-details--link {
@@ -84,27 +161,6 @@
 		color: black;
 		font-family: $font-sub-headings;
 		border-bottom: 1px solid black;
-	}
-}
-
-.delete-product {
-	grid-area: delete-product;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	.delete-product--button {
-		width: 30%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-	}
-
-	p {
-		font-size: 1em;
-		margin-right: 5px;
-		font-family: $font-sub-headings;
+		font-size: 25px;
 	}
 }

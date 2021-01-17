@@ -9,7 +9,7 @@ export function createNav() {
     let authLink = `<a class="${pathname === "/login.html" ? "active" : ""}" href="login.html"><i class="fas fa-user"></i>Login</a>`;
 
     if(username) {
-        authLink = `<a class="${pathname === "/admin.html" ? "active" : ""}" href="admin.html"><i class="fas fa-user"></i>Admin Panel</a> `
+        authLink = `<a class="${pathname === "/admin.html" ? "active" : ""}" href="admin.html"><i class="fas fa-user"></i>Admin</a> `
     }
 
     const navContainer = document.querySelector(".nav--container");

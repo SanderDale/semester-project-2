@@ -18,14 +18,7 @@ export function displayAdminProducts(adminProducts) {
                                                 <div class="edit-product-link">
                                                     <a href="editProduct.html?id=${item.id}">Edit</a>
                                                 </div>
-                                                <div class="delete-product">
-                                                    <div class="delete-product--button">
-                                                        <p>Delete</p>
-                                                        <i class="fas fa-times"></i>
-                                                    </div>
-                                                </div>
                                             </div>`
         });
     }
-
 }

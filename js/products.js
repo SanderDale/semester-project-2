@@ -14,7 +14,6 @@ async function getProducts() {
         const products = results;
         displayProducts(products);
         searchProducts(products);
-        console.log(products);
     } catch (error) {
         console.log(error);
     }

@@ -4,7 +4,8 @@
 
 	.addProductFrom--container {
 		background-color: white;
-		width: 40%;
+		width: 90%;
+		max-width: 800px;
 		margin: 0 auto;
 		padding: 20px 0;
 		display: flex;
@@ -13,6 +14,7 @@
 		border-radius: 20px;
 
 		form {
+			width: 80%;
 			padding: 1em;
 			border-radius: 1em;
 			font-family: $font-sub-headings;
@@ -24,12 +26,12 @@
 
 		label {
 			display: block;
-			margin-top: 3rem;
+			margin-top: 2rem;
 			font-size: 20px;
+		}
 
-			@media screen and (max-width: $tablet-width) {
-				margin-top: 2rem;
-			}
+		.add-product-title {
+			margin-top: 0;
 		}
 
 		input {
@@ -42,8 +44,11 @@
 			background-color: $background-color;
 
 			@media screen and (max-width: $mobile-width) {
-				font-size: 16px;
 				padding: 15px 20px;
+			}
+
+			@media screen and (max-width: $tablet-width) {
+				font-size: 1rem;
 			}
 		}
 
@@ -52,14 +57,37 @@
 			border: 2px solid $primary-color;
 		}
 
+		.featured-button--container {
+			display: grid;
+			grid-template-columns: 40px 40px;
+			column-gap: 5px;
+			row-gap: 5px;
+			justify-items: start;
+			align-items: center;
+			margin: 20px 0;
+			width: 40%;
+
+			label {
+				margin: 0;
+			}
+
+			input {
+				margin: 0;
+			}
+		}
+
+		.button--container {
+			text-align: center;
+		}
+
 		button {
 			background-color: $primary-color;
-			width: 100%;
+			width: 80%;
 			padding: 1rem;
 			color: white;
 			cursor: pointer;
 			border-radius: 50px;
-			margin-top: 3rem;
+			margin-top: 2rem;
 			border: 2px solid $primary-color;
 			font-size: 20px;
 		}
@@ -72,59 +100,10 @@
 		button:focus {
 			outline: none;
 		}
+
+		.delete {
+			background-color: rgb(240, 40, 40);
+			border: 2px solid red;
+		}
 	}
-}
-
-/* The switch - the box around the slider */
-.switch {
-	position: relative;
-	display: inline-block;
-	width: 60px;
-	height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-/* The slider */
-.slider {
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: $background-color-two;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-}
-
-.slider:before {
-	position: absolute;
-	content: "";
-	height: 26px;
-	width: 26px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	-webkit-transition: 0.4s;
-	transition: 0.4s;
-}
-
-input:checked + .slider {
-	background-color: $primary-color;
-}
-
-input:focus + .slider {
-	box-shadow: 0 0 1px$primary-color;
-}
-
-input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
 }

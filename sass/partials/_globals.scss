@@ -37,7 +37,13 @@ body {
 		bottom: 0px;
 		left: 0px;
 		background-image: url(../../images/banner.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
 		opacity: 0.6;
+
+		@media screen and (max-width: $tablet-width) {
+			background-image: url(../../images/banner-tablet.jpg);
+		}
 	}
 
 	h1 {

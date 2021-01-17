@@ -22,39 +22,43 @@
             <form id="addProduct--form">
                 <div class="message-container"></div>
                 <div>
-                    <label>
-                        Title
+                    <label class="add-product-title">
+                        Title:
                         <input name="title" id="title" placeholder="Title">
                     </label>
                 </div>
                 <div>
                     <label>
-                        Price
+                        Price:
                         <input name="price" id="price" placeholder="Price">
                     </label>
                 </div>
                 <div>
                     <label>
-                        Image Url
+                        Image Url:
                         <input name="image-url" id="image-url" placeholder="Image Url">
                     </label>
                 </div>
                 <div>
                     <label>
-                        Description
+                        Description:
                         <input name="description" id="description" placeholder="Description">
                     </label>
                 </div>
                 <div>
                     <label>
-                        Featured
-                        <label class="switch">
-                        <input type="checkbox" checked>
-                        <span class="slider"></span>
-                        </label>
+                        Featured:
+                        <div class="featured-button--container">
+                            <label>Yes</label>
+                            <input class="featured" type="radio" id="featured-yes" name="featured" value="true">
+                            <label>No</label>
+                            <input class="featured" type="radio" id="featured-no" name="featured" value="false" checked="true">
+                        </div>
                     </label>
                 </div>
-                <button>Add Product</button>
+                <div class="button--container">
+                    <button>Add Product</button>
+                </div>
             </form>
         </main>
     </div>

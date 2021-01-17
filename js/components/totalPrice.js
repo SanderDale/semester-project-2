@@ -2,14 +2,19 @@ import { getCartItems } from './getCartItems.js';
 
 const cartItems = getCartItems();
 
+let totalPriceContainer = document.querySelector(".total--number");
+
 export function totalPrice(cartItems) {
+
     let total = 0;
 
-    for (let i = 0; i < cartItems.length; i++) {
-        total = total + (cartItems[i].quantity + cartItems[i].price);
+    for(let i = 0; i < cartItems.length; i++) {
+        const parsedItem = parseFloat(cartItems[i].price);
+
+        total += parsedItem;
     }
-    
-    return total;
+
+    totalPriceContainer.innerHTML = "$ " + total;
 }
 
 totalPrice(cartItems);

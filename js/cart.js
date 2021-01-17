@@ -3,7 +3,6 @@ import { totalPrice } from './components/totalPrice.js'
 import { navSlide, createNav } from "./components/nav.js";
 
 createNav();
-
 navSlide();
 
 const cartItems = getCartItems();
@@ -38,10 +37,11 @@ function createCart(cartItems) {
                                                     </div>
                                                 </div>
                                                 <div class="product-price">
-                                                    <p>$ ${item.price}</p>
+                                                    <p class="product-price-real">$ ${item.price}</p>
                                                 </div>
                                             </div>`
         });
+        totalPrice(cartItems);
     }
 }
 
@@ -82,5 +82,3 @@ function saveCartItems(cartItems) {
     localStorage.setItem("itemsAddedToCart", JSON.stringify(cartItems));
     
 }
-
-//totalPrice(cartItems);

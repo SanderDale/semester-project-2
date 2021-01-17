@@ -15,7 +15,7 @@ export function displayFeatured(featuredToDisplay) {
 
         featuredCardContainer.innerHTML += `<a class="product-card--link" href="details.html?id=${items.id}">
                                                 <div class="featured-items-card">
-                                                    <img src="${items.image_url}" alt="${items.image.alternativeText}">
+                                                    <img src="${items.image_url}">
                                                     <h4>${items.title}</h4>
                                                     <p>${items.description}</p>
                                                     <p>$ ${items.price}</p>

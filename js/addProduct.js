@@ -3,6 +3,12 @@ import displayMessage from "./components/displayMessage.js";
 import { getToken } from "./components/userStorage.js";
 import { url } from "./constants/data.js";
 
+const token = getToken();
+
+if(!token) {
+    location.href = "/";
+}
+
 createNav();
 navSlide();
 
@@ -20,29 +26,31 @@ function submitForm(event) {
 
     message.innerHTML = "";
 
+    const featured = document.querySelector("input[name='featured']:checked").value;
+
     const titleValue = title.value.trim();
     const priceValue = parseFloat(price.value);
     const descriptionValue = description.value.trim();
     const imageUrlValue = imageUrl.value.trim();
+    const featuredValue = featured;
 
     if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageUrlValue.length === 0) {
         return displayMessage("warning", "Please supply proper values", ".message-container");
     }
 
-    addProduct(titleValue, priceValue, descriptionValue, imageUrlValue);
+    addProduct(titleValue, priceValue, descriptionValue, imageUrlValue, featuredValue);
 }
 
-async function addProduct(title, price, description, imageUrl) {
+async function addProduct(title, price, description, imageUrl, featured) {
     const addUrl = url;
 
     const data = JSON.stringify({ 
         title: title, 
         price: price, 
         description: description, 
-        image_url: imageUrl
+        image_url: imageUrl,
+        featured: featured
     });
-
-    const token = getToken();
 
     const options = {
         method: "POST",

@@ -8,7 +8,9 @@ navSlide();
 
 const homeBanner = document.querySelector(".hero--background");
 
-homeBanner.style.backgroundImage = "url(http://localhost:1337/uploads/photo_1544085311_11a028465b03_29d7651dcc.jpeg)";
+const homeUrl = "url('http://localhost:1337/uploads/photo_1544085311_11a028465b03_29d7651dcc.jpeg')";
+
+homeBanner.style.backgroundImage = homeUrl;
 
 async function getProducts() {
     try {

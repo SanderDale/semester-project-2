@@ -22,7 +22,7 @@
             <form id="addProduct--form">
                 <div class="message-container"></div>
                 <div>
-                    <label>
+                    <label class="add-product-title">
                         Title
                         <input name="title" id="title" placeholder="Title">
                     </label>
@@ -46,15 +46,22 @@
                     </label>
                 </div>
                 <div>
-                    <label class="switch">
-                      <input type="checkbox" checked>
-                      <span class="slider"></span>
+                    <label>
+                        Featured:
+                        <div class="featured-button--container">
+                            <label>Yes</label>
+                            <input class="featured" type="radio" id="featured-yes" name="featured" value="true">
+                            <label>No</label>
+                            <input class="featured" type="radio" id="featured-no" name="featured" value="false">
+                        </div>
                     </label>
                 </div>
 
                 <input id="id" type="hidden" />
-
-                <button>Edit Product</button>
+                <div class="button--container">
+                    <button>Edit Product</button>
+                    <div class="delete--container"></div>
+                </div>
             </form>
         </main>
     </div>
