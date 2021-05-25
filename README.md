@@ -1,0 +1,1 @@
+This website was our semester project at school. The goal of this project was to create an e-commerce website. I chose to create a website that sold watches. On this website I used HTML, CSS(Sass) and Javascript. We were tasked to create a local API through Strapi to fetch information to populate the website.
