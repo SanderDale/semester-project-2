@@ -10,5 +10,6 @@
         "like",
         "preconnect",
         "what"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
