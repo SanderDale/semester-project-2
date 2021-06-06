@@ -8,19 +8,19 @@ navSlide();
 
 const homeBanner = document.querySelector(".hero--background");
 
-const homeUrl = "url('http://localhost:1337/uploads/photo_1544085311_11a028465b03_29d7651dcc.jpeg')";
+const homeUrl = "url('https://strapi-upload-watches-sander.s3.eu-north-1.amazonaws.com/hero_banner_85c880fedb.jpg')";
 
 homeBanner.style.backgroundImage = homeUrl;
 
 async function getProducts() {
-    try {
-        const response = await fetch(url);
-        const results = await response.json();
-        const products = results;
-        displayFeatured(products);
-    } catch (error) {
-        console.log(error);
-    }
+	try {
+		const response = await fetch(url);
+		const results = await response.json();
+		const products = results;
+		displayFeatured(products);
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 getProducts();

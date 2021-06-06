@@ -472,8 +472,6 @@ p {
 .featured-items-card img {
   width: 100%;
   max-width: 400px;
-  -webkit-box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
-          box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
 }
 
 .featured-items-card h4 {
@@ -482,7 +480,7 @@ p {
 }
 
 .featured-items-card p {
-  color: #e2dace;
+  color: black;
   max-width: 409px;
   line-height: 33px;
   padding-bottom: 20px;
@@ -631,6 +629,7 @@ p {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
+  background-color: #eeeeee;
 }
 
 .product-card--link:hover {

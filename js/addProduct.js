@@ -5,8 +5,8 @@ import { url } from "./constants/data.js";
 
 const token = getToken();
 
-if(!token) {
-    location.href = "/";
+if (!token) {
+	location.href = "/";
 }
 
 createNav();
@@ -15,68 +15,80 @@ navSlide();
 const form = document.querySelector("#addProduct--form");
 const title = document.querySelector("#title");
 const price = document.querySelector("#price");
-const imageUrl = document.querySelector("#image-url");
+const image = document.querySelector("#image");
 const description = document.querySelector("#description");
 const message = document.querySelector(".message-container");
 
 form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
-    event.preventDefault();
+	event.preventDefault();
 
-    message.innerHTML = "";
+	message.innerHTML = "";
 
-    const featured = document.querySelector("input[name='featured']:checked").value;
+	const featured = document.querySelector("input[name='featured']:checked").value;
 
-    const titleValue = title.value.trim();
-    const priceValue = parseFloat(price.value);
-    const descriptionValue = description.value.trim();
-    const imageUrlValue = imageUrl.value.trim();
-    const featuredValue = featured;
+	const titleValue = title.value.trim();
+	const priceValue = parseFloat(price.value);
+	const descriptionValue = description.value.trim();
+	const imageValue = image.value;
+	const featuredValue = featured;
 
-    if(titleValue.length === 0 || priceValue.length === 0 || isNaN(priceValue) || descriptionValue.length === 0 || imageUrlValue.length === 0) {
-        return displayMessage("warning", "Please supply proper values", ".message-container");
-    }
+	console.log(imageValue);
 
-    addProduct(titleValue, priceValue, descriptionValue, imageUrlValue, featuredValue);
+	if (
+		titleValue.length === 0 ||
+		priceValue.length === 0 ||
+		isNaN(priceValue) ||
+		descriptionValue.length === 0 ||
+		imageValue === null
+	) {
+		return displayMessage("warning", "Please supply proper values", ".message-container");
+	}
+
+	addProduct(titleValue, priceValue, descriptionValue, imageValue, featuredValue);
 }
 
-async function addProduct(title, price, description, imageUrl, featured) {
-    const addUrl = url;
+async function addProduct(title, price, description, image, featured) {
+	const addUrl = url;
 
-    const data = JSON.stringify({ 
-        title: title, 
-        price: price, 
-        description: description, 
-        image_url: imageUrl,
-        featured: featured
-    });
+	const formData = new FormData();
 
-    const options = {
-        method: "POST",
-        body: data,
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
-        }
-    };
+	formData.append(
+		"data",
+		JSON.stringify({
+			title: title,
+			price: price,
+			description: description,
+			featured: featured,
+		})
+	);
+	formData.append("image", image.files[0]);
 
-    try {
-        const response = await fetch(addUrl, options);
-        const json = await response.json();
+	const options = {
+		method: "POST",
+		body: formData,
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-        if(json.created_at) {
-            displayMessage("success", "New product created", ".message-container");
-            form.reset();
-        }
+	try {
+		const response = await fetch(addUrl, options);
+		const json = await response.json();
 
-        if(json.error) {
-            displayMessage("error", "Please log in to creat new products", ".message-container");
-        }
+		if (json.created_at) {
+			displayMessage("success", "New product created", ".message-container");
+			form.reset();
+		}
 
-        console.log(json);
-    }
-    catch(error) {
-        console.log(error);
-    }
+		if (json.error) {
+			displayMessage("error", "Please log in to creat new products", ".message-container");
+		}
+
+		console.log(json);
+	} catch (error) {
+		console.log(error);
+	}
 }

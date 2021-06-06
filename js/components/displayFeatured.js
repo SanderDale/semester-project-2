@@ -14,7 +14,7 @@ export function displayFeatured(featuredToDisplay) {
 	filteredItems.forEach(function (items) {
 		featuredCardContainer.innerHTML += `<a class="product-card--link" href="details.html?id=${items.id}">
                                                 <div class="featured-items-card">
-                                                    <img src="${items.image_url}">
+                                                    <img src="${items.image.url}">
                                                     <h4>${items.title}</h4>
                                                     <p>${items.description}</p>
                                                     <p>$ ${items.price}</p>

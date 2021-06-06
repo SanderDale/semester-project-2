@@ -33,7 +33,6 @@
 	img {
 		width: 100%;
 		max-width: 400px;
-		box-shadow: 6px 6px 6px rgba($color: #000000, $alpha: 0.2);
 	}
 
 	h4 {
@@ -42,7 +41,7 @@
 	}
 
 	p {
-		color: $white-text-color;
+		color: black;
 		max-width: 409px;
 		line-height: 33px;
 		padding-bottom: 20px;

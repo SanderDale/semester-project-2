@@ -8,15 +8,16 @@ createNav();
 navSlide();
 
 async function getProducts() {
-    try {
-        const response = await fetch(url);
-        const results = await response.json();
-        const products = results;
-        displayProducts(products);
-        searchProducts(products);
-    } catch (error) {
-        console.log(error);
-    }
+	try {
+		const response = await fetch(url);
+		const results = await response.json();
+		const products = results;
+		console.log(products);
+		displayProducts(products);
+		searchProducts(products);
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 getProducts();
